@@ -13,7 +13,7 @@ const getCityCoords = function (city) {
     return;
   }
 
-  const url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=2034943004183163ccc8173fc39572d8`;
+  const url = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=2034943004183163ccc8173fc39572d8`;
 
   fetch(url)
     .then(res => res.json())
@@ -113,7 +113,7 @@ const getDeviceLocation = function () {
 };
 
 const getCityName = (lat, lon) => {
-  const url = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=2034943004183163ccc8173fc39572d8`;
+  const url = `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=2034943004183163ccc8173fc39572d8`;
   fetch(url)
     .then(res => res.json())
     .then(city => getCityCoords(`` + city[0].name));
